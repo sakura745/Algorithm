@@ -52,6 +52,7 @@ int main(){
     sort(arr2.begin(), arr2.end());
 
     assert(arr == arr2);
+    cout << "Success!" << endl;
 //    cout << "Output original array: \n";
 //    A.readVec(arr);
 //    vector<int> arr2 = arr;//deep copy
