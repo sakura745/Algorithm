@@ -16,11 +16,14 @@ public:
         }
         return arr;
     }
-    void swap(int& a, int& b){
-        a ^= b;
-        b ^= a;
-        a ^= b;
-    }
+
+
+//    void swap(int& a, int& b){
+//        a ^= b;
+//        b ^= a;
+//        a ^= b;
+//    }
+
     void BubbleSort(vector<int> &nums){
         for(int i = 0; i < nums.size(); i++ ){
             for(int j = 1; j < nums.size() - i; j++)
@@ -28,13 +31,15 @@ public:
         }
     }
 
-//    void readVec(vector<int> &nums){
-//        for(auto &i : nums){
-//            cout << i << " ";
-//        }
-//        cout << endl;
-//    }
+    void readVec(vector<int> &nums){
+        for(auto &i : nums){
+            cout << i << " ";
+        }
+        cout << endl;
+    }
+
 };
+
 
 int main(){
 
@@ -42,16 +47,20 @@ int main(){
     int maxValue = 1000;
     Solution A;
     vector<int> arr = A.generateRandomArray(maxSize, maxValue);
-//    cout << "Output original array: \n";
-//    A.readVec(arr);
     vector<int> arr2 = arr;//deep copy
     A.BubbleSort(arr);
+    sort(arr2.begin(), arr2.end());
+
+    assert(arr == arr2);
+//    cout << "Output original array: \n";
+//    A.readVec(arr);
+//    vector<int> arr2 = arr;//deep copy
+//    A.BubbleSort(arr);
 //    cout << "Output BubbleSort array: \n";
 //    A.readVec(arr);
-    sort(arr2.begin(), arr2.end());
+//    sort(arr2.begin(), arr2.end());
 //    cout << "Output STL array: \n";
 //    A.readVec(arr2);
 
-    assert(arr == arr2);
 
 }

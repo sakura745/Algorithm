@@ -2,11 +2,16 @@
  [左神b站课程](https://www.bilibili.com/video/BV13g41157hK?p=3)
 
 
-**代码为本人全手写**
+由于左神的课程是为了让我们在面试的时候脱颖而出，因此有的代码是经过几行代码整合出来的。
+有的难以理解，但不是不能理解。
 
+**总之，加油吧。**
 
-That has a lot question of CMakeLists.txt, I cannt handle it.
+本程序为C++，本人为C++的初学者，会有许多问题，如果发现问题欢迎指出。
 
-So I just remember my idea when i am studying algorithom.
+`main.cpp`是拷贝leetcode的代码。**其余代码本人纯手写**。
+
+`CMakeLists.txt`文件有点问题，没有修改。有的头文件中的代码直接包含了函数定义，并没有把函数定义写在对应源文件中去。
+是为了方便复制到LeetCode。
 
  
