@@ -40,7 +40,6 @@ public:
 
         while (left < heapSize) {//越界与否
 
-            //xiugai daxiao
             //比较index的两个子节点的大小
             // && 的优先级比 ?: 优先级高
             //a&&b 如果a为true则再判断b，如果a为false则a&&b为false。
