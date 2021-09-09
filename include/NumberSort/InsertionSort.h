@@ -11,6 +11,8 @@ class Solution {
         b ^= a;
         a ^= b;
     }
+
+    //swap是为了序号不动而修改值
     void InsertionSort(vector<int> &nums){
         for(int i = 1; i < nums.size(); i++){
 //            for(int j = i; j > 0 && j < nums.size(); j--)
