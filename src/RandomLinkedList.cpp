@@ -20,22 +20,23 @@ ListNode* generateLinkedList(int MaxSize, int MaxValue){
     srand(time(0));
 
     ListNode* dum = new ListNode(-1);//define dummy node
-    ListNode* ptr = dum;//using traversal vector
+    ListNode* ptr = dum;//using generate Linked List
     for(int i = 0; i < MaxSize; i++){
         ptr->next = new ListNode(rand() % MaxValue + 1);//赋值
         ptr = ptr->next;//下移
     }
-    ptr = dum->next;//遍历之后，将ptr设为linkedlist 的head node
+    ptr = dum->next;//生成List之后，将ptr设为linkedlist 的head node
     delete dum;
     return ptr;
 }
 
 void printLinkedList(ListNode* head){
     if(head == nullptr) return;
-    while(head != nullptr){
-        cout << head->val << " ";
+    while(head->next != nullptr){//为了调整输出中 "->" 的位置
+        cout << head->val << " -> ";
         head = head->next;
     }
+    cout << head->val << endl;//同上
 }
 
 int main(){

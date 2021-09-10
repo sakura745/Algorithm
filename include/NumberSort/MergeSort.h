@@ -6,25 +6,21 @@
 #define MAIN_MERGESORT_H
 
 void merge(vector<int>&nums, int l, int m, int r){
-    int i = 0;
-    vector<int> tmp(r - l + 1);
+    //辅助数组及其指针
+    vector<int> tmp(r - l + 1); int tmptr = 0;
+
+    //左右指针
     int p1 = l, p2 = m + 1;
-    while(p1 <= m && p2 <= r) {//设置边界,看p1和p2哪个先消耗完
-        tmp[i++] = nums[p1] < nums[p2] ? nums[p1++] : nums[p2++];
-    }
+
+    //设置边界,看p1和p2哪个先消耗完
+    while(p1 <= m && p2 <= r) tmp[tmptr++] = nums[p1] < nums[p2] ? nums[p1++] : nums[p2++];
 
     //两者只能中其一
-    while(p1 <= m) {
-        tmp[i++] = nums[p1++];
-    }
-    while (p2 <= r) {
-        tmp[i++] = nums[p2++];
-    }
+    while(p1 <= m) tmp[tmptr++] = nums[p1++];
+    while(p2 <= r) tmp[tmptr++] = nums[p2++];
 
-
-    for(int index = 0; index < tmp.size(); index++){//之所以不能用 nums = tmp;来替换，是因为递归
-        nums[index + l] = tmp[index];
-    }
+    //之所以不能用 nums = tmp;来替换，是因为递归
+    for(int index = 0; index < tmp.size(); index++) nums[index + l] = tmp[index];
 
 }
 

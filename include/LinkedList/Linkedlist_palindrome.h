@@ -52,7 +52,7 @@ public:
 class Solution {
 public:
     bool isPalindrome(ListNode* head) {
-        if(head == nullptr || head->next == nullptr) return true;
+        if(nullptr == head->next || nullptr == head) return true;
         ListNode* fast = head, *slow = head->next;
         while(fast->next != nullptr && fast->next->next != nullptr){
             fast = fast->next->next;
@@ -70,7 +70,7 @@ public:
     }
 private:
     ListNode* reverseList(ListNode* head){
-        if(head->next == nullptr || head == nullptr) return head;
+        if(nullptr == head->next || nullptr == head) return head;
         ListNode *pre = nullptr, *cur = head;
         while(cur != nullptr){
             ListNode* tmp = cur->next;//断开cur与cur下一个node的link
