@@ -15,10 +15,9 @@
  *     ListNode(int x, ListNode *next) : val(x), next(next) {}
  * };
  */
-//对于给定的输出长度不确定时候。用数学归纳法来判断自己选择的方法是否正确。如Linkedlist长度分别为0，1，2，3，4开始找规律
-//基本上可以确定是否适用了，因为再长的都同理
-//法一
-////code代码为先用快慢指针找到中点位置，将后半部分push stack，在弹出stack与head比较
+
+//法一 笔试
+//先用快慢指针找到中点位置，将后半部分push stack，在弹出stack与head比较
 class Solution {
 public:
     bool isPalindrome(ListNode* head) {
@@ -47,7 +46,8 @@ public:
         return true;
     }
 };
-//法二：
+
+//法二：面试
 //反转列表而不是push stack pop stack
 class Solution {
 public:
@@ -78,7 +78,7 @@ private:
             pre = cur;//pre移动到cur位置
             cur = tmp;//cur移动到tmp位置
         }
-        head->next = cur;//将反转的链表恢复，为了整个链表正常
+        head->next = cur;//将反转的链表恢复，为了使链表正常，无修改。
         return pre;
     }
 };
