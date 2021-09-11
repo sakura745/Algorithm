@@ -15,10 +15,8 @@ struct ListNode{
 };
 
 
-ListNode* generateLinkedList(int MaxSize, int MaxValue){
-
+ListNode* generateRandomLinkedList(int MaxSize, int MaxValue){
     srand(time(0));
-
     ListNode* dum = new ListNode(-1);//define dummy node
     ListNode* ptr = dum;//using generate Linked List
     for(int i = 0; i < MaxSize; i++){
@@ -42,7 +40,19 @@ void printLinkedList(ListNode* head){
 int main(){
     int MaxSize = 10;
     int MaxValue = 10;
-    ListNode* head = generateLinkedList(MaxSize, MaxValue);
+    ListNode* head = generateRandomLinkedList(MaxSize, MaxValue);
     printLinkedList(head);
+
+    //手动链表
+    ListNode* text;
+    text = new ListNode(1);
+    text->next = new ListNode(2);
+    text->next->next = new ListNode(3);
+    text->next->next->next = new ListNode(4);
+    text->next->next->next->next = new ListNode(5);
+    text->next->next->next->next->next = new ListNode(6);
+    text->next->next->next->next->next->next = new ListNode(7);
+    text->next->next->next->next->next->next = text->next;//环
+
     return 0;
 }

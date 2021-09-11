@@ -5,17 +5,6 @@
 #ifndef MAIN_LINKEDLIST_PALINDROME_H
 #define MAIN_LINKEDLIST_PALINDROME_H
 
-/**
- * Definition for singly-linked list.
- * struct ListNode {
- *     int val;
- *     ListNode *next;
- *     ListNode() : val(0), next(nullptr) {}
- *     ListNode(int x) : val(x), next(nullptr) {}
- *     ListNode(int x, ListNode *next) : val(x), next(next) {}
- * };
- */
-
 //法一 笔试
 //先用快慢指针找到中点位置，将后半部分push stack，在弹出stack与head比较
 class Solution {
