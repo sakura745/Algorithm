@@ -62,12 +62,12 @@ private:
         if(nullptr == head->next || nullptr == head) return head;
         ListNode *pre = nullptr, *cur = head;
         while(cur != nullptr){
-            ListNode* tmp = cur->next;//断开cur与cur下一个node的link
+            ListNode* tmp = cur->next;//令tmp为cur的下一个
             cur->next = pre;//将cur指向pre反向link
             pre = cur;//pre移动到cur位置
             cur = tmp;//cur移动到tmp位置
         }
-        head->next = cur;//将反转的链表恢复，为了使链表正常，无修改。
+//        head->next = cur;//将反转的链表恢复，为了使链表正常，无修改。
         return pre;
     }
 };
