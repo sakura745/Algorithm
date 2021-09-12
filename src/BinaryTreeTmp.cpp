@@ -1,9 +1,3 @@
-//
-// Created by bas on 9/12/21.
-//
-//
-// Created by bas on 9/12/21.
-//
 #include <iostream>
 #include <stack>
 #include <vector>
@@ -21,28 +15,30 @@ struct TreeNode{
 
 class Solution{
 public:
-    vector<int> preorderTraversal_NoRec(TreeNode* head){
-        if(nullptr != head) {
+    vector<int> preorderTraversal_NoRec(TreeNode* root){
+        if(nullptr != root) {
             stack<TreeNode> stack;
 
         }
     }
 public:
-    vector<int> inorderTraversal_NoRec(TreeNode* head){
-        if(nullptr != head) {
+    vector<int> inorderTraversal_NoRec(TreeNode* root){
+        vector<int> res;
+        if(nullptr != root) {
             stack<TreeNode*> stack;
-            while(!stack.empty() || head != nullptr){
-                if(head != nullptr){
-                    stack.push(head);
-                    head = head->left;
+            while(!stack.empty() || root != nullptr){
+                if(root != nullptr){
+                    stack.push(root);
+                    root = root->left;
                 } else {
-                    head = stack.top();
+                    root = stack.top();
                     stack.pop();
-
-                    head = head->right;
+                    res.push_back(root->val);
+                    root = root->right;
                 }
             }
         }
+        return res;
     }
 
 public:
@@ -55,5 +51,12 @@ public:
 };
 
 int main(){
+    TreeNode* cur = new TreeNode(1);
+    cur->left = new TreeNode(2);
+    cur->right = new TreeNode(3);
+    cur->left->left = new TreeNode(4);
+    cur->left->right = new TreeNode(5);
+    cur->right->left = new TreeNode(6);
+    cur->right->right = new TreeNode(7);
 
 }
