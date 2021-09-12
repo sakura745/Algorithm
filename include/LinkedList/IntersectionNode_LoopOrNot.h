@@ -27,7 +27,7 @@ public:
 
 private:
     ListNode *getLoopNode(ListNode* head){
-//        if(nullptr == head || nullptr == head->next) return nullptr;
+//        if(nullptr == head || nullptr == head->next || nullptr == head->next->next) return nullptr;
         ListNode * slow = head->next, *fast = head->next->next;//判断是否为相等，所以初始值不能设置相等
         while(slow != fast){
             if(nullptr == fast->next || nullptr == fast->next->next) return nullptr;//fast指针到终点了，没有环
