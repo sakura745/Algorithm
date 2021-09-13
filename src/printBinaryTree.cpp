@@ -13,30 +13,28 @@ struct TreeNode{
     TreeNode(int x, TreeNode *left, TreeNode *right): val(x), left(left), right(right){}
 };
 
-
 void printBranch(TreeNode *root, int space)
 {
     if (root == nullptr) return;
     //数字间的距离（只看横向）
     space += COUNT;
 
-    //inorderTraversal for the space
     printBranch(root->right, space);
 
-    //
+    //inorderTraversal for the space
     cout << endl;
     for (int i = COUNT; i < space; i++) cout << " ";
-    cout << root->val
-         << endl;
+    cout << root->val << endl;
+
     printBranch(root->left, space);
 
 }
-
-
 void printTreeNode(TreeNode *root)
 {
     printBranch(root, 0);
 }
+
+
 
 int main()
 {
