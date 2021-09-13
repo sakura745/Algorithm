@@ -11,25 +11,6 @@ class Solution{
 public:
     const int radix = 10;//基数为10
 
-    //求最大位数
-    int maxDigit(vector<int>& nums){
-        int digit = 0;
-        int Max = 0;
-        for(auto &i : nums){
-            Max = max(i, Max);
-        }
-        while(Max != 0){
-            digit++;
-            Max /= radix;
-        }
-        return digit;
-    }
-
-    //每一位的数
-    int getDigit(int num, int digit){
-        return  int(num / pow(radix, digit - 1)) % radix;
-    }
-
     void BucketSort(vector<int>& nums){
 
         vector<int> tmp(nums.size());
@@ -62,6 +43,25 @@ public:
             }
 
         }
+    }
+private:
+    //求最大位数
+    int maxDigit(vector<int>& nums){
+        int digit = 0;
+        int Max = 0;
+        for(auto &i : nums){
+            Max = max(i, Max);
+        }
+        while(Max != 0){
+            digit++;
+            Max /= radix;
+        }
+        return digit;
+    }
+
+    //每一位的数
+    int getDigit(int num, int digit){
+        return  int(num / pow(radix, digit - 1)) % radix;
     }
 };
 #endif //MAIN_BUCKETSORT_H

@@ -6,6 +6,7 @@
 #define MAIN_INSERTIONSORT_H
 
 class Solution {
+private:
     void swap(int& a, int& b){
         a ^= b;
         b ^= a;

@@ -51,12 +51,13 @@ public:
 };
 
 int main(){
-    TreeNode* cur = new TreeNode(1);
-    cur->left = new TreeNode(2);
-    cur->right = new TreeNode(3);
-    cur->left->left = new TreeNode(4);
-    cur->left->right = new TreeNode(5);
-    cur->right->left = new TreeNode(6);
-    cur->right->right = new TreeNode(7);
+    TreeNode* root = new TreeNode(1);
+    root->left = new TreeNode(2);
+    root->right = new TreeNode(3);
+    root->left->left = new TreeNode(4);
+    root->left->right = new TreeNode(5);
+    root->right->left = new TreeNode(6);
+    root->right->right = new TreeNode(7);
 
 }
+
