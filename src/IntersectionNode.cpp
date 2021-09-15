@@ -1,3 +1,4 @@
+//两个链表是否有相交的点，无论链表是否有环
 #include <iostream>
 #include <assert.h>
 
