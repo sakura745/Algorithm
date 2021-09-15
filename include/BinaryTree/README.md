@@ -8,5 +8,9 @@ struct TreeNode{
     TreeNode(int x, TreeNode *left, TreeNode *right): val(x), left(left), right(right){}
 };
 ```
+迭代关系
+
 通过root root->left root->right建立循环关系
 可以用queue的push 和pop 进行下一个下一个循环
+
+---
