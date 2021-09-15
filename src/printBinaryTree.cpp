@@ -34,10 +34,7 @@ void printTreeNode(TreeNode *root)
     printBranch(root, 0);
 }
 
-
-
-int main()
-{
+TreeNode* InputBinaryTree(void){
     TreeNode *root = new TreeNode(1);
     root->left = new TreeNode(2);
     root->right = new TreeNode(3);
@@ -55,9 +52,13 @@ int main()
     root->right->left->right = new TreeNode(13);
     root->right->right->left = new TreeNode(14);
     root->right->right->right = new TreeNode(15);
+    return root;
+}
 
+int main()
+{
+    TreeNode* root = InputBinaryTree();
     printTreeNode(root);
-
     return 0;
 }
 
