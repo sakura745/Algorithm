@@ -6,7 +6,7 @@
 #define MAIN_MERGESORT_H
 class Solution {
 private:
-    void merge(vector<int> &nums, int l, int m, int r) {
+    void process(vector<int> &nums, int l, int m, int r) {
         //辅助数组及其指针
         vector<int> tmp(r - l + 1);
         int tmptr = 0;
@@ -26,12 +26,14 @@ private:
     }
 
 public:
-    void MergeSort(vector<int> &nums, int l, int r) {
-        if (l == r) return;//break recursive
-        int m = l + ((r - l) >> 1);//r-((r-l)>>1)是不对的，改为r-((r-l+1)>>1); l+是靠近l取整，r-是靠近r取整
-        MergeSort(nums, l, m);
-        MergeSort(nums, m + 1, r);
-        merge(nums, l, m, r);
+    void mergeSort(vector<int> &nums, int l, int r) {
+        //都可以if (l == r) return;//break recursive
+        if(l < r) {
+            int m = l + ((r - l) >> 1);//r-((r-l)>>1)是不对的，改为r-((r-l+1)>>1); l+是靠近l取整，r-是靠近r取整
+            mergeSort(nums, l, m);
+            mergeSort(nums, m + 1, r);
+            process(nums, l, m, r);
+        }
     }
 };
 #endif //MAIN_MERGESORT_H

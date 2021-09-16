@@ -26,13 +26,13 @@ private:
         return  tmp;
     }
 public:
-    void QuickSort(vector<int>&nums, int l, int r){
+    void quickSort(vector<int>&nums, int l, int r){
         if(l < r) {//递归。因为是用partition分出的边界，要保证l r 的大小关系。
             srand(time(0));
             swap(nums[l + rand() % (r - l + 1)], nums[r]);
             vector<int> a = partition(nums, l, r);
-            QuickSort(nums, l, a[0] - 1);
-            QuickSort(nums, a[1] + 1, r);
+            quickSort(nums, l, a[0] - 1);
+            quickSort(nums, a[1] + 1, r);
         }
     }
 

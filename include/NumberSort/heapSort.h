@@ -6,28 +6,23 @@
 #define MAIN_HEAPSORT_H
 class Solution {
 public:
-    void HeapSort(vector<int> &nums) {
+    void heapSort(vector<int> &nums) {
 
-        for(int e = nums.size() - 1; e >= 0; e--) {//e >= 0不能改成 e!= 0
-            Heapify(nums, e, nums.size());
+        int heapSize = nums.size();//heapSize定义为nums.size()，之所以有这行，而不是将nums.size()代入下面的函数中，
+        //是为了简写成 --headpSize
+
+        for(int e = heapSize - 1; e >= 0; e--) {//e >= 0不能改成 e!= 0
+            Heapify(nums, e, heapSize);
         }
-        //从前往后heapify不能保证为大根堆，只能从后往前
-//        for(int i = 0; i < nums.size(); i++){
-//            Heapify(nums, i, nums.size());
-//        }
-
+        //Heapify就是从后往前这么定义来的
 
 //       等价于Headify
 //        for (int i = 0; i < nums.size(); i++) {
 //            HeapInsert(nums, i);
 //        }
-
-        int heapSize = nums.size();//heapSize定义为nums.size()，之所以有这行，而不是将nums.size()代入下面的函数中，
-        //是为了简写成 --headpSize
-
         swap(nums[0], nums[--heapSize]);
         while (heapSize != 0) {
-            Heapify(nums, 0, heapSize);
+            Heapify(nums, 0, heapSize);//只需判断index = 0即可，因为是最大根堆
             swap(nums[0], nums[--heapSize]);
         }
     }
@@ -57,10 +52,10 @@ private:
             //比较节点和子节点
             larger = nums[index] > nums[larger] ? index : larger;
 
-            if (index == larger) {
+            if (index == larger) {//防止无限循环于此
                 break;
             }
-            //55 和 58 只是判断序号，没有交换数据
+            //50 和 53 只是判断序号，没有交换数据
             swap(nums[index], nums[larger]);
 
             index = larger;
