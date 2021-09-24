@@ -8,12 +8,14 @@
 class Solution {
 public:
     double findMaxAverage(vector<int>& nums, int k) {
-        double sum = 0, res = -DBL_MAX;
-        int l = 0;//左窗口
-        for(int r = 0; r < nums.size(); r++){//右窗口移动
+        double res = -DBL_MAX, sum = 0;
+        int l = 0;
+        for(int r = 0; r < nums.size(); r++){
             sum += nums[r];
-            if(r - l + 1 == k) res = max(sum / k, res);
-            if(r >= k - 1) sum -= nums[l++];//左窗口移动
+            if(r - l + 1 == k){
+                res = max(res, sum / k);
+                sum -= nums[l++];
+            }
         }
         return res;
     }
