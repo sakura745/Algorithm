@@ -33,17 +33,18 @@ public:
 private:
     int* nextVector(string s){
         int res[s.size()];
-        res[0] = -1;
+        res[0] = -1;//认为规定，可以跳出j = res[j]
         if(s.size() == 1) return res;
         res[1] = 0;
         int i = 2, j = 0;//j位置的字符和i-1的字符比较来确定i的值
         while(i < s.size()){
 
             //其中有i的位置都要i++；用i更新数列
-            if(s[i - 1] == s[j])res[i++] = ++j;
-                //cn往前跳
-            else if (j > 0){j = res[j];
-            else res[i++] = 0;
+            if(s[i - 1] == s[j]) res[i++] = ++j;
+            //j = 0表示j指针到头了，res[i] = 0
+            else if (j == 0) res[i++] = 0;
+            //j往前跳
+            else j = res[j];
         }
         return res;
     }
