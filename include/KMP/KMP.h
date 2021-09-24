@@ -12,7 +12,7 @@ public:
         if(n == 0) return 0;
         if(h < n) return -1;
         int i = 0, j = 0;
-        int *next = nextVector(needle);
+        int *next = nextArray(needle);
         while(i < h && j < n){
 
             //一直保持i的位置不变，调节j的位置，通过i和j同时相加，确保i和j 的对齐，
@@ -31,7 +31,7 @@ public:
         return j == n ? i - j : -1;//i越界了；j越界了表示没有找到，返回-1
     }
 private:
-    int* nextVector(string s){
+    int* nextArray(string s){
         int res[s.size()];
         res[0] = -1;//认为规定，可以跳出j = res[j]
         if(s.size() == 1) return res;
