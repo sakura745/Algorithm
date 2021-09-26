@@ -33,5 +33,15 @@ private:
         }
         return res;
     }
+
+    string reduceString(string s){
+        string res(s.size() / 2, ' ');
+        int index = 0, i = 0;
+        while(i < res.size()){
+            if((index & 1) == 0) index++;
+            else res[i++] = s[index++];
+        }
+        return res;
+    }
 };
 #endif //ALGORITHM_MANNCHAER_H
