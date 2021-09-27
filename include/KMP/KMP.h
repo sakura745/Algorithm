@@ -32,7 +32,7 @@ public:
     }
 private:
     int* nextArray(string s){
-        int res[s.size()];
+        int *res = new int[s.size()];
         res[0] = -1;//认为规定，可以跳出j = res[j]
         if(s.size() == 1) return res;
         res[1] = 0;
