@@ -186,7 +186,7 @@ ListNode *Solution::getIntersectionNode_DoubleLoop(ListNode *headA, ListNode *he
     ListNode *loop2 = getLoopNode(headB);
     if (loop1 == loop2) {
         ListNode *cur1 = headA, *cur2 = headB;
-        int n = 0;;
+        int n = 0;
         while (cur1->next != nullptr) {
             n++;
             cur1 = cur1->next;

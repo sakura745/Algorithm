@@ -20,7 +20,6 @@ public:
                 if(nums[j - 1] > nums[j]) swap(nums[j - 1], nums[j]);
         }
     }
-
 };
 
 vector<int> generateRandomArray(int maxSize, int maxValue){
