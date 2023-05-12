@@ -19,12 +19,3 @@
 
 ---
 因为链表的本质是指针，根据题意有的需要修改链表，有个需要建立辅助链表。
-
----
-```c++
-ListNode *pre , *cur;
-pre->next = cur;//pre指向cur 指针的方式理解
-
-cur = pre->next;//cur是pre下一个 节点的方式理解。有这种理解，一般是初始化的指向
-//ListNode *cur = pre->next;
-```
