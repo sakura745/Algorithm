@@ -15,7 +15,7 @@ struct ListNode{
 };
 
 
-ListNode* generateRandomLinkedList(int MaxSize, int MaxValue){
+ListNode* generateRandomLinkedList(const int& MaxSize, const int& MaxValue){
     srand(time(0));
     ListNode* dum = new ListNode(-1);//define dummy node
     ListNode* ptr = dum;//using generate Linked List
