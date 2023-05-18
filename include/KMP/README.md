@@ -2,6 +2,6 @@ Knuth–Morris–Pratt 字符串搜索算法（或 KMP 算法）通过观察当�
 
 原理和暴力的一样，区别是会加快数据的搜索以至于降低复杂度。
 
-暴力复杂度为 $\mathcal{O}(N * M)$,KMP复杂度为 $\mathcal{O}(N)$ 
+暴力复杂度为 $\mathcal{O}(N * M)$ ,KMP复杂度为  $\mathcal{O}(N)$ 
 `N = str1.size(),M = str2.size()`
 
